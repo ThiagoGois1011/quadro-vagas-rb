@@ -1,0 +1,2 @@
+class JobAd < ApplicationRecord
+end

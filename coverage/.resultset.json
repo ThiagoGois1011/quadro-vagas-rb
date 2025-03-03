@@ -1,0 +1,275 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/config/environment.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/config/application.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/config/boot.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/config/environments/test.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/config/initializers/assets.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/config/initializers/content_security_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/spec/factories/job_ads.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/app/models/job_ad.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/spec/system/home_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/spec/views/job_ads/index.html.tailwindcss_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/config/routes.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/app/controllers/job_ads_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/thiag/Desktop/Estudo 2023/TreinaDev/quadro-vagas/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1741035164
+  }
+}
