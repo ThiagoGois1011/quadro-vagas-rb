@@ -1,23 +1,36 @@
 services:
   web:
     build: .
+    container_name: rails
     command: bin/rails server -b '0.0.0.0'
     volumes:
       - .:/app
     ports:
       - 3000:3000
     environment:
+      - RAILS_ENV=development
       - DATABASE_URL=postgresql://postgres:password@db:5432/quadro_vagas_development
     depends_on:
       - db
-
+  test:
+    build: .
+    command: bash -c "bin/rails db:create && tail -f /dev/null"
+    container_name: rails_test
+    volumes:
+      - ".:/app"
+    environment:
+      - RAILS_ENV=test
+      - DATABASE_URL=postgresql://postgres:password@db:5432/quadro_vagas_test
+    depends_on:
+      - db
   db:
+    container_name: postgressql
     image: postgres:13
     volumes:
       - pg_data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: password
-      POSTGRES_USER: postgres
-      POSTGRES_DB: quadro_vagas_development
+    ports:
+      - 5432
 volumes:
   pg_data:

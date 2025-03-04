@@ -35,18 +35,6 @@ begin
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
-Capybara.register_driver(:cuprite) do |app|
-  Capybara::Cuprite::Driver.new(
-    app,
-    browser_options: {
-      "no-sandbox" => nil,
-      "disable-gpu" => nil
-    },
-    headless: true
-  )
-end
-
-Capybara.javascript_driver = :cuprite
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -60,6 +48,16 @@ RSpec.configure do |config|
 
   config.before(type: :system, js: true) do
     driven_by(:cuprite)
+  end
+
+  config.before(:each, type: :system, js: true) do
+    driven_by(:cuprite, screen_size: [ 1440, 810 ], options: {
+      js_errors: false,
+      headless: %w[0],
+      process_timeout: 15,
+      timeout: 10,
+      browser_options: { "no-sandbox" => nil }
+    })
   end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
