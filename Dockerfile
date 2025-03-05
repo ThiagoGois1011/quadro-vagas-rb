@@ -2,7 +2,6 @@ FROM ruby:3.4.2
 
 RUN apt-get update -qq && apt-get install -y --no-install-recommends \
   nodejs \
-  npm \
   watchman \
   postgresql-client \
   build-essential \
@@ -16,7 +15,5 @@ WORKDIR /app
 COPY Gemfile ./
 RUN bundle install
 COPY . .
-# COPY entrypoint.sh /entrypoint.sh
-# RUN chmod +x /entrypoint.sh
-# ENTRYPOINT ["/entrypoint.sh"]
+
 

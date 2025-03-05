@@ -1,4 +1,5 @@
 #! bin/sh -e
-bin/rails db:create
-bin/rails db:migrate
-foreman start -f Procfile.dev
+
+bin/rails db:prepare
+rm -f tmp/pids/server.pid
+exec bin/dev

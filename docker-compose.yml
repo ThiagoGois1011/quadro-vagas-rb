@@ -2,12 +2,12 @@ networks:
   quadro_vagas: 
 services:
   web:
+    container_name: rails
     build: .
+    tty: true
     networks:
       - quadro_vagas
-    container_name: rails
-    # command: ["sh", "-c", "chmod +x bin/dev && bin/dev"]
-    tty: true
+    command: sh -c 'sh bin/server.sh'
     volumes:
       - .:/app
     ports:
