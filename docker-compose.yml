@@ -3,12 +3,13 @@ services:
     container_name: rails
     build: .
     tty: true
-    command: sh -c 'sh bin/server.sh'
+    command: sh -c 'if [ "$RUN_SERVER" != "true" ]; then echo "Server skipped, keeping container open"; tail -f /dev/null; else sh bin/server.sh; fi'
     volumes:
       - .:/app
     ports:
       - 3000:3000
     environment:
+      RUN_SERVER: ${RUN_SERVER:-true}
       DATABASE_HOST: db
       DATABASE_USERNAME: postgres
       DATABASE_PASSWORD: postgres

@@ -17,6 +17,7 @@ jobs:
 
       - name: Configurar Docker
         run: |
+          echo "RUN_SERVER=false" >> $GITHUB_ENV
           docker compose up
 
       - name: Verifica Container
