@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe 'User see message' do
     it 'with success', js: true do
       visit root_path

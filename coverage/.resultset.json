@@ -203,56 +203,8 @@
           null
         ]
       },
-      "/app/spec/factories/job_ads.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
       "/app/app/helpers/application_helper.rb": {
         "lines": [
-          1,
-          null
-        ]
-      },
-      "/app/app/models/job_ad.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/app/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/app/spec/system/home_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/app/spec/views/job_ads/index.html.tailwindcss_spec.rb": {
-        "lines": [
-          1,
-          null,
           1,
           null
         ]
@@ -294,6 +246,6 @@
         ]
       }
     },
-    "timestamp": 1741134247
+    "timestamp": 1741203056
   }
 }

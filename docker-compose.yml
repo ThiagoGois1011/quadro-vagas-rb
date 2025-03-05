@@ -1,12 +1,8 @@
-networks:
-  quadro_vagas: 
 services:
   web:
     container_name: rails
     build: .
     tty: true
-    networks:
-      - quadro_vagas
     command: sh -c 'sh bin/server.sh'
     volumes:
       - .:/app
@@ -23,8 +19,6 @@ services:
 
   db:
     container_name: postgressql
-    networks:
-      - quadro_vagas
     image: postgres:13
     volumes:
       - pg_data:/var/lib/postgresql/data

@@ -1,39 +1,33 @@
-name: CI
+name: Ruby on Rails CI
 
 on:
-  pull_request:
   push:
-    branches: [ main ]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  scan_js:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: .ruby-version
-          bundler-cache: true
-
-      - name: Scan for security vulnerabilities in JavaScript dependencies
-        run: bin/importmap audit
-
-  lint:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout código
         uses: actions/checkout@v4
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: .ruby-version
-          bundler-cache: true
+      - name: Configurar Docker
+        run: |
+          docker compose up -d
 
-      - name: Lint code for consistent style
-        run: bin/rubocop -f github
+      - name: Rodar Rubocop
+        run: |
+          docker compose exec -T web rubocop
 
+      - name: Rodar testes
+        run: |
+          docker compose exec -T web rspec
+
+      - name: Finalizar containers
+        if: always()
+        run: |
+          docker compose down

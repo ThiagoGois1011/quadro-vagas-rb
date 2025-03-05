@@ -1,24 +1,47 @@
-# README
+# Documentação do Projeto Rails com Docker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Visão Geral
 
-Things you may want to cover:
+Este projeto é uma aplicação **Rails** (Ruby on Rails) configurada para rodar dentro de um ambiente **Docker**. O uso do Docker facilita a configuração e o gerenciamento do ambiente de desenvolvimento e produção, garantindo consistência em diferentes sistemas operacionais e evitando problemas comuns relacionados a configurações de ambiente.
 
-* Ruby version
+## Requisitos
 
-* System dependencies
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
-* Configuration
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-* Database creation
+Após a instalação, você pode verificar se tudo está correto com os seguintes comandos:
 
-* Database initialization
+```bash
+docker --version
+docker-compose --version
+```
 
-* How to run the test suite
+## Passo a passo para executar
 
-* Services (job queues, cache servers, search engines, etc.)
+Faça o build das imagens.
 
-* Deployment instructions
+```bash
+docker-compose build
+```
+Execute as imagens para abrir o container.
 
-* ...
+```bash
+docker-compose up
+```
+
+Em outro terminal, você pode rodar esse comando para manipular os código dentro do container do rails.
+
+```bash
+docker-compose exec web bash
+```
+
+Após carregar, você pode rodar os testes dentro dele e executar qualquer ação do rails. Para sair, basta rodar um ```exit```.
+
+Para derrubar a aplicação do docker, basta dar um CRL + C no terminal em que ele foi aberto ou rodar esse comando para encerrá-lo:
+
+```bash
+docker-compose down
+```
+
