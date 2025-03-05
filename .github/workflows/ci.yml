@@ -15,10 +15,15 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
+      - name: Definir variável de ambiente
+        run: echo "RUN_SERVER=false" >> $GITHUB_ENV
+      
+      - name: Verificar a variável de ambiente
+        run: echo "O valor de RUN_SERVER é $RUN_SERVER"
+
       - name: Configurar Docker
         run: |
-          echo "RUN_SERVER=false" >> $GITHUB_ENV
-          docker compose up
+          docker compose up --build -d
 
       - name: Verifica Container
         run: |
