@@ -1,36 +1,38 @@
+networks:
+  quadro_vagas: 
 services:
   web:
     build: .
+    networks:
+      - quadro_vagas
     container_name: rails
-    command: bin/rails server -b '0.0.0.0'
+    # command: ["sh", "-c", "chmod +x bin/dev && bin/dev"]
+    tty: true
     volumes:
       - .:/app
     ports:
       - 3000:3000
     environment:
-      - RAILS_ENV=development
-      - DATABASE_URL=postgresql://postgres:password@db:5432/quadro_vagas_development
+      DATABASE_HOST: db
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_NAME: quadro_vagas_development
+      RAILS_ENV: development
     depends_on:
       - db
-  test:
-    build: .
-    command: bash -c "bin/rails db:create && tail -f /dev/null"
-    container_name: rails_test
-    volumes:
-      - ".:/app"
-    environment:
-      - RAILS_ENV=test
-      - DATABASE_URL=postgresql://postgres:password@db:5432/quadro_vagas_test
-    depends_on:
-      - db
+
   db:
     container_name: postgressql
+    networks:
+      - quadro_vagas
     image: postgres:13
     volumes:
       - pg_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: quadro_vagas_development
     ports:
-      - 5432
+      - 5432:5432
 volumes:
   pg_data:

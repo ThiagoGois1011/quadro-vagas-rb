@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-03-04T20:02:46+00:00">2025-03-04T20:02:46+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-03-05T00:24:07+00:00">2025-03-05T00:24:07+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -22,14 +22,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  100.0%
+  95.52%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="red">
+         0.96
        </span>
     </span> hits/line
     )
@@ -42,11 +42,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>58</b> relevant lines,
-    <span class="green"><b>58</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
+    <b>67</b> relevant lines,
+    <span class="green"><b>64</b> lines covered</span> and
+    <span class="red"><b>3</b> lines missed. </span>
     (<span class="green">
-  100.0%
+  95.52%
 </span>
 )
   </div>
@@ -158,13 +158,13 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#adcc9e45276fd66da5b760479f9f2729931add8f" class="src_link" title="config/environments/test.rb">config/environments/test.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">45</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="strong t-file__name"><a href="#077ca574d88eead0d7f201720f0318c4d5c10bdf" class="src_link" title="config/environments/development.rb">config/environments/development.rb</a></td>
+            <td class="yellow strong cell--number t-file__coverage">85.00 %</td>
+            <td class="cell--number">63</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">0.85</td>
             
           </tr>
         
@@ -1239,12 +1239,12 @@
 </div>
 
       
-        <div class="source_table" id="adcc9e45276fd66da5b760479f9f2729931add8f">
+        <div class="source_table" id="077ca574d88eead0d7f201720f0318c4d5c10bdf">
   <div class="header">
-    <h3>config/environments/test.rb</h3>
+    <h3>config/environments/development.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="yellow">
+  85.0%
 </span>
 
       lines covered
@@ -1253,9 +1253,9 @@
     
 
     <div class="t-line-summary">
-      <b>11</b> relevant lines.
-      <span class="green"><b>11</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>20</b> relevant lines.
+      <span class="green"><b>17</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
 
     
@@ -1266,12 +1266,14 @@
     <ol>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="1">
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby"># The test environment is used exclusively to run your application&#39;s</code>
+            <code class="ruby">require &quot;active_support/core_ext/integer/time&quot;</code>
           </li>
         </div>
       
@@ -1281,17 +1283,19 @@
 
             
 
-            <code class="ruby"># test suite. You never need to work with it otherwise. Remember that</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
+          <li class="covered" data-hits="1" data-linenumber="3">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby"># your test database is &quot;scratch space&quot; for the test suite and is wiped</code>
+            <code class="ruby">Rails.application.configure do</code>
           </li>
         </div>
       
@@ -1301,7 +1305,7 @@
 
             
 
-            <code class="ruby"># and recreated between test runs. Don&#39;t rely on the data there!</code>
+            <code class="ruby">  # Settings specified here will take precedence over those in config/application.rb.</code>
           </li>
         </div>
       
@@ -1316,24 +1320,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+
+            <code class="ruby">  # Make code changes take effect immediately without server restart.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
             
               <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">Rails.application.configure do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-
-            
-
-            <code class="ruby">  # Settings specified here will take precedence over those in config/application.rb.</code>
+            <code class="ruby">  config.enable_reloading = true</code>
           </li>
         </div>
       
@@ -1353,7 +1357,7 @@
 
             
 
-            <code class="ruby">  # While tests run files are not watched, reloading is not necessary.</code>
+            <code class="ruby">  # Do not eager load code on boot.</code>
           </li>
         </div>
       
@@ -1365,7 +1369,7 @@
 
             
 
-            <code class="ruby">  config.enable_reloading = false</code>
+            <code class="ruby">  config.eager_load = false</code>
           </li>
         </div>
       
@@ -1385,17 +1389,19 @@
 
             
 
-            <code class="ruby">  # Eager loading loads your entire application. When running a single test locally,</code>
+            <code class="ruby">  # Show full error reports.</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="covered" data-hits="1" data-linenumber="13">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  # this is usually not necessary, and can slow down your test suite. However, it&#39;s</code>
+            <code class="ruby">  config.consider_all_requests_local = true</code>
           </li>
         </div>
       
@@ -1405,7 +1411,7 @@
 
             
 
-            <code class="ruby">  # recommended that you enable it in continuous integration systems to ensure eager</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1415,7 +1421,7 @@
 
             
 
-            <code class="ruby">  # loading is working properly before deploying your code.</code>
+            <code class="ruby">  # Enable server timing.</code>
           </li>
         </div>
       
@@ -1427,7 +1433,7 @@
 
             
 
-            <code class="ruby">  config.eager_load = ENV[&quot;CI&quot;].present?</code>
+            <code class="ruby">  config.server_timing = true</code>
           </li>
         </div>
       
@@ -1447,63 +1453,59 @@
 
             
 
-            <code class="ruby">  # Configure public file server for tests with cache-control for performance.</code>
+            <code class="ruby">  # Enable/disable Action Controller caching. By default Action Controller caching is disabled.</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
+          <li class="never" data-hits="" data-linenumber="19">
+            
+
+            
+
+            <code class="ruby">  # Run rails dev:cache to toggle Action Controller caching.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="20">
             
               <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  config.public_file_server.headers = { &quot;cache-control&quot; =&gt; &quot;public, max-age=3600&quot; }</code>
+            <code class="ruby">  if Rails.root.join(&quot;tmp/caching-dev.txt&quot;).exist?</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
+          <li class="missed" data-hits="0" data-linenumber="21">
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    config.action_controller.perform_caching = true</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="missed" data-hits="0" data-linenumber="22">
             
 
             
 
-            <code class="ruby">  # Show full error reports.</code>
+            <code class="ruby">    config.action_controller.enable_fragment_cache_logging = true</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
-            
-              <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="23">
             
 
             
 
-            <code class="ruby">  config.consider_all_requests_local = true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  config.cache_store = :null_store</code>
+            <code class="ruby">    config.public_file_server.headers = { &quot;cache-control&quot; =&gt; &quot;public, max-age=#{2.days.to_i}&quot; }</code>
           </li>
         </div>
       
@@ -1513,29 +1515,29 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  else</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
-            
-
-            
-
-            <code class="ruby">  # Render exception templates for rescuable exceptions and raise for other exceptions.</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
+          <li class="covered" data-hits="1" data-linenumber="25">
             
               <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  config.action_dispatch.show_exceptions = :rescuable</code>
+            <code class="ruby">    config.action_controller.perform_caching = false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1555,7 +1557,7 @@
 
             
 
-            <code class="ruby">  # Disable request forgery protection in test environment.</code>
+            <code class="ruby">  # Change to :null_store to avoid any caching.</code>
           </li>
         </div>
       
@@ -1567,7 +1569,7 @@
 
             
 
-            <code class="ruby">  config.action_controller.allow_forgery_protection = false</code>
+            <code class="ruby">  config.cache_store = :memory_store</code>
           </li>
         </div>
       
@@ -1587,7 +1589,7 @@
 
             
 
-            <code class="ruby">  # Store uploaded files on the local file system in a temporary directory.</code>
+            <code class="ruby">  # Store uploaded files on the local file system (see config/storage.yml for options).</code>
           </li>
         </div>
       
@@ -1599,7 +1601,7 @@
 
             
 
-            <code class="ruby">  config.active_storage.service = :test</code>
+            <code class="ruby">  config.active_storage.service = :local</code>
           </li>
         </div>
       
@@ -1619,7 +1621,7 @@
 
             
 
-            <code class="ruby">  # Print deprecation notices to the stderr.</code>
+            <code class="ruby">  # Print deprecation notices to the Rails logger.</code>
           </li>
         </div>
       
@@ -1631,7 +1633,7 @@
 
             
 
-            <code class="ruby">  config.active_support.deprecation = :stderr</code>
+            <code class="ruby">  config.active_support.deprecation = :log</code>
           </li>
         </div>
       
@@ -1651,17 +1653,19 @@
 
             
 
-            <code class="ruby">  # Raises error for missing translations.</code>
+            <code class="ruby">  # Raise an error on page load if there are pending migrations.</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="covered" data-hits="1" data-linenumber="38">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  # config.i18n.raise_on_missing_translations = true</code>
+            <code class="ruby">  config.active_record.migration_error = :page_load</code>
           </li>
         </div>
       
@@ -1681,17 +1685,19 @@
 
             
 
-            <code class="ruby">  # Annotate rendered view with file names.</code>
+            <code class="ruby">  # Highlight code that triggered database queries in logs.</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
+          <li class="covered" data-hits="1" data-linenumber="41">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  # config.action_view.annotate_rendered_view_with_filenames = true</code>
+            <code class="ruby">  config.active_record.verbose_query_logs = true</code>
           </li>
         </div>
       
@@ -1711,7 +1717,7 @@
 
             
 
-            <code class="ruby">  # Raise error when a before_action&#39;s only/except options reference missing actions.</code>
+            <code class="ruby">  # Append comments with runtime information tags to SQL queries in logs.</code>
           </li>
         </div>
       
@@ -1723,12 +1729,198 @@
 
             
 
-            <code class="ruby">  config.action_controller.raise_on_missing_callback_actions = true</code>
+            <code class="ruby">  config.active_record.query_log_tags_enabled = true</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="45">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+
+            
+
+            <code class="ruby">  # Highlight code that enqueued background job in logs.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="47">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  config.active_job.verbose_enqueue_logs = true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="49">
+            
+
+            
+
+            <code class="ruby">  # Raises error for missing translations.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="50">
+            
+
+            
+
+            <code class="ruby">  # config.i18n.raise_on_missing_translations = true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="51">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="52">
+            
+
+            
+
+            <code class="ruby">  # Annotate rendered view with file names.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="53">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  config.action_view.annotate_rendered_view_with_filenames = true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+
+            
+
+            <code class="ruby">  # Uncomment if you wish to allow Action Cable access from any origin.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+
+            
+
+            <code class="ruby">  # config.action_cable.disable_request_forgery_protection = true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+
+            
+
+            <code class="ruby">  # Raise error when a before_action&#39;s only/except options reference missing actions.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="59">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  config.action_controller.raise_on_missing_callback_actions = true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="60">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="61">
+            
+
+            
+
+            <code class="ruby">  # Apply autocorrection by RuboCop to files generated by `bin/rails generate`.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="62">
+            
+
+            
+
+            <code class="ruby">  # config.generators.apply_rubocop_autocorrect_after_generate!</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
             
 
             
