@@ -34,15 +34,11 @@ jobs:
             -t web-rails .
 
       - name: Definir variável de ambiente
-        run: echo "RUN_SERVER=false" >> $GITHUB_ENV
+        run: echo "RUN_SERVER=false" >> .env
 
       - name: Configurar Docker
         run: |
           docker compose up --build -d
-
-      - name: Verifica Container
-        run: |
-          docker ps
 
       - name: Rodar Rubocop
         run: |
