@@ -38,7 +38,7 @@ jobs:
 
       - name: Configurar Docker
         run: |
-          docker compose up --build -d
+          docker compose up --build
 
       - name: Verifica Container
         run: |
