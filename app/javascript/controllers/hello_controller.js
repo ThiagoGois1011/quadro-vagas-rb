@@ -1,7 +1,15 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {
-    this.element.textContent = "Bem vindo ao quadro de vagas"
+  static targets = ["message"]
+
+  showMessage() {
+    if(this.messageTarget.innerHTML.trim() == ''){
+      this.messageTarget.innerHTML =  'Bem vindo ao quadro de vagas 🚀';
+    }
+    else{
+      this.messageTarget.innerHTML =  '';
+    }
+
   }
 }
