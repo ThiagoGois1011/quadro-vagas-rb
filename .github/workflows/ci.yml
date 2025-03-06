@@ -15,11 +15,26 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
+      - name: Restaurar cache do Docker
+        uses: actions/cache@v3
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Configurar Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Construir imagem com cache
+        run: |
+          docker buildx build \
+            --cache-to=type=local,dest=/tmp/.buildx-cache \
+            --cache-from=type=local,src=/tmp/.buildx-cache \
+            -t web-rails .
+
       - name: Definir variável de ambiente
         run: echo "RUN_SERVER=false" >> $GITHUB_ENV
-      
-      - name: Verificar a variável de ambiente
-        run: echo "O valor de RUN_SERVER é $RUN_SERVER"
 
       - name: Configurar Docker
         run: |

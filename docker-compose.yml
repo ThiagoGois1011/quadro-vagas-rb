@@ -1,6 +1,7 @@
 services:
   web:
     container_name: rails
+    image: web-rails
     build: .
     tty: true
     command: sh -c 'if [ "$RUN_SERVER" != "true" ]; then echo "Server skipped, keeping container open"; tail -f /dev/null; else sh bin/server.sh; fi'
