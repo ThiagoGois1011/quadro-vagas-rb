@@ -1,10 +1,10 @@
 <div>
     <h1 class="text-3xl font-bold block">Vagas</h1>
 
-    <div class="my-10">
+    <div class="my-10 flex flex-col">
         <% if @job_postings.any? %>
             <% @job_postings.each do |job| %>
-                <%= link_to job.title, job_posting_path(job) %>
+                <%= link_to job.title, job_posting_path(job), class: 'text-blue-600 underline my-4' %>
             <% end %>
         <% else %>
             <p>Ainda não foi criado nenhuma vaga.</p>
