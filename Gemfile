@@ -1,9 +1,11 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "bcrypt", "~> 3.1"
 gem "bootsnap", require: false
 gem "importmap-rails"
 gem "jbuilder"
+gem "kaminari", "~> 1.2"
 gem "pg"
 gem "propshaft"
 gem "puma", ">= 5.0"
@@ -27,5 +29,3 @@ group :development, :test do
   gem "simplecov", require: false
   gem "shoulda-matchers"
 end
-
-gem "bcrypt", "~> 3.1"

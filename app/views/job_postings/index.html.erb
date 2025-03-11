@@ -1,0 +1,16 @@
+<div>
+    <h1 class="text-3xl font-bold block">Vagas</h1>
+
+    <div class="my-10">
+        <% if @job_postings.any? %>
+            <% @job_postings.each do |job| %>
+                <%= link_to job.title, job_posting_path(job) %>
+            <% end %>
+        <% else %>
+            <p>Ainda não foi criado nenhuma vaga.</p>
+        <% end %>
+    </div>
+
+    <%= paginate @job_postings %>
+</div>
+

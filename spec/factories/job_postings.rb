@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :job_posting do
-    title { "MyString" }
-    company_profile { nil }
-    salary { "MyString" }
-    salary_currency { "MyString" }
-    salary_period { "MyString" }
+    title { "Dev Ruby on Rails" }
+    company_profile
+    salary { "3000" }
+    salary_currency { "USD" }
+    salary_period { "Mensalmente" }
   end
 end
