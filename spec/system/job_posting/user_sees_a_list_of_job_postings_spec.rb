@@ -5,16 +5,18 @@ describe 'User sees a list of job postings', type: :system do
     user = create(:user, name: 'João')
     company = create(:company_profile, user: user, name: 'Campus Code')
     create(:job_posting, title: 'Dev Ruby on Rails', company_profile: company)
-    create(:job_posting, title: 'Dev Front-End', company_profile: company)
+    create(:job_posting, title: 'Dev Front-End', company_profile: company, status: :archived)
 
     login_as(user)
     visit root_path
     within('#nav-links') do
       click_on 'Vagas'
     end
-    
+
     expect(page).to have_content('Dev Ruby on Rails')
+    expect(page).to have_content('Ativo')
     expect(page).to have_content('Dev Front-End')
+    expect(page).to have_content('Arquivado')
   end
 
   it 'with an empty list' do

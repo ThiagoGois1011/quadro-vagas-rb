@@ -1,5 +1,5 @@
 class JobPostingsController < ApplicationController
-  allow_unauthenticated_access only: [:show]
+  allow_unauthenticated_access only: [ :show ]
 
   def index
     @job_postings = Current.user.job_postings.page(params[:page]).per(10)

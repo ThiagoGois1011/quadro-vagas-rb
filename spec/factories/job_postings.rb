@@ -4,6 +4,7 @@ FactoryBot.define do
     company_profile { create(:company_profile) }
     sequence(:salary) { |n| "Salary #{n}" }
     salary_currency { "USD" }
+    status { 0 }
     salary_period { "Monthly" }
     job_type { create(:job_type) }
     description { "Something" }

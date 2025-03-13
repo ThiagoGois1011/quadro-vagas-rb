@@ -53,7 +53,7 @@ RSpec.configure do |config|
 
   include FactoryBot::Syntax::Methods
   include TestHelper
-  
+
   config.use_transactional_fixtures = true
 
   config.filter_rails_from_backtrace!

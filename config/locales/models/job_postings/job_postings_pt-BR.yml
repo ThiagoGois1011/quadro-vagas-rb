@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      job_posting: Postagem de Trabalho
+    attributes:
+      job_posting:
+        status:
+          active: 'Ativo'
+          archived: 'Arquivado'
+        
