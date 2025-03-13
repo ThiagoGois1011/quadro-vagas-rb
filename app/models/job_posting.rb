@@ -14,7 +14,7 @@ class JobPosting < ApplicationRecord
   belongs_to :company_profile
   belongs_to :job_type
   belongs_to :experience_level
-  
+
   has_rich_text :description
 
   enum :salary_currency, { usd: 0, eur: 10, brl: 20 }

@@ -12,15 +12,16 @@ RSpec.describe JobPosting, type: :model do
     it { should belong_to :job_type }
     it { should validate_presence_of(:description) }
     it { should belong_to :experience_level }
-    
+
     it 'default value of status' do
       company_profile = create(:company_profile)
       job_type = create(:job_type)
-      job_posting = JobPosting.create!(title: 'Dev Ruby', salary: '2000', salary_currency: 'USD', salary_period: 'Monthly',
-                         description: 'Uma descrição', company_profile: company_profile, job_type: job_type)
+      experience_level = create(:experience_level)
+      job_posting = JobPosting.create!(title: 'Dev Ruby', salary: '2000', salary_currency: :usd, salary_period: :monthly,
+                                       description: 'Uma descrição', company_profile: company_profile, job_type: job_type,
+                                       experience_level: experience_level, work_arrangement: :remote)
 
       expect(job_posting.status).to eq('active')
     end
-    
   end
 end

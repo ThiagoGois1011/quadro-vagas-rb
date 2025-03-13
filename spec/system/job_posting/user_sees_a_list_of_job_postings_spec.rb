@@ -4,8 +4,9 @@ describe 'User sees a list of job postings', type: :system do
   it 'with success' do
     user = create(:user, name: 'João')
     company = create(:company_profile, user: user, name: 'Campus Code')
-    create(:job_posting, title: 'Dev Ruby on Rails', company_profile: company)
-    create(:job_posting, title: 'Dev Front-End', company_profile: company, status: :archived)
+    experience_level = create(:experience_level)
+    create(:job_posting, title: 'Dev Ruby on Rails', company_profile: company, experience_level: experience_level)
+    create(:job_posting, title: 'Dev Front-End', company_profile: company, status: :archived, experience_level: experience_level)
 
     login_as(user)
     visit root_path
@@ -45,12 +46,13 @@ describe 'User sees a list of job postings', type: :system do
   it 'but don\'t see of the others' do
     user_1 = create(:user, name: 'João', email_address: 'joao@email.com')
     user_2 = create(:user, name: 'Thiago', email_address: 'thiago@email.com')
+    experience_level = create(:experience_level)
     company_1 = create(:company_profile, user: user_1, name: 'Campus Code', contact_email: 'contact@campus.com')
     company_2 = create(:company_profile, user: user_2, name: 'Rebase', contact_email: 'contact@rebase.com')
-    create(:job_posting, title: 'Dev Ruby on Rails', company_profile: company_1)
-    create(:job_posting, title: 'Dev Laravel', company_profile: company_1)
-    create(:job_posting, title: 'Dev Front-End', company_profile: company_2)
-    create(:job_posting, title: 'Dev Back-End', company_profile: company_2)
+    create(:job_posting, title: 'Dev Ruby on Rails', company_profile: company_1, experience_level: experience_level)
+    create(:job_posting, title: 'Dev Laravel', company_profile: company_1, experience_level: experience_level)
+    create(:job_posting, title: 'Dev Front-End', company_profile: company_2, experience_level: experience_level)
+    create(:job_posting, title: 'Dev Back-End', company_profile: company_2, experience_level: experience_level)
 
     login_as(user_2)
     visit root_path
