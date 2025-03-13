@@ -6,11 +6,13 @@ RSpec.describe JobPosting, type: :model do
     it { should validate_presence_of(:salary) }
     it { should validate_presence_of(:salary_currency) }
     it { should validate_presence_of(:salary_period) }
-    it { should validate_presence_of(:job_type) }
+    it { should validate_presence_of(:work_arrangement) }
+    it { should validate_presence_of(:description) }
     it { should belong_to :company_profile }
     it { should belong_to :job_type }
     it { should validate_presence_of(:description) }
-
+    it { should belong_to :experience_level }
+    
     it 'default value of status' do
       company_profile = create(:company_profile)
       job_type = create(:job_type)
@@ -19,5 +21,6 @@ RSpec.describe JobPosting, type: :model do
 
       expect(job_posting.status).to eq('active')
     end
+    
   end
 end

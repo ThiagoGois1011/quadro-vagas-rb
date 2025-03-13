@@ -10,4 +10,13 @@ pt-BR:
     index:
       job: 'Vagas'
       dont_have_any_job: 'Ainda não foi criado nenhuma vaga.'
+    new:
+      title: "Anunciar vaga"
+      submit: "Anunciar"
+      select:
+        work_arrangement: "Selecione o arranjo de trabalho"
+        salary_period: "Selecione o periodo do salário"
+    create:
+      failure: "Erro ao tentar criar Anúncio da vaga"
+      success: "Anúncio criado com sucesso"
       

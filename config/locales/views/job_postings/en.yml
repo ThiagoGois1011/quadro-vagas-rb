@@ -9,5 +9,10 @@ en:
       back: 'Back'
     index:
       job: 'Job'
-      dont_have_any_job: 'No jobs have been created yet.'
-      
+      dont_have_any_job: 'No jobs have been created yet.' 
+    new:
+      title: "Post a Job"
+      submit: "Submit"
+      select:
+        work_arrangement: "Select work arrangement"
+        salary_period: "Select salary period"
