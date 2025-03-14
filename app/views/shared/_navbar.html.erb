@@ -38,6 +38,7 @@
         
       </ul>
         <div class="flex items-center gap-4">
+          <%= link_to 'Upload do script', bulk_upload_path %>
         <% if authenticated? %>
           <li role="none" class="flex items-stretch">
             <% if Current.user.admin? %>
