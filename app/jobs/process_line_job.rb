@@ -1,5 +1,5 @@
 class ProcessLineJob < ApplicationJob
-  queue_with_priority :default
+  queue_as :default
 
   USER_INDEX_EMAIL = 1
   USER_INDEX_NAME = 2
