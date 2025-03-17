@@ -10,7 +10,7 @@ class BulkUploadController < ApplicationController
     file_path = Rails.root.join("tmp", uploaded_file.original_filename)
     File.open(file_path, "wb") { |file| file.write(uploaded_file.read) }
 
-    ProcessTxtJob.perform_later(file_path.to_s)
+    ProcessTxtJob.perform_later(file_path.to_s, Current.user.id)
 
     redirect_to bulk_status_path, notice: "Arquivo recebido com sucesso."
   end

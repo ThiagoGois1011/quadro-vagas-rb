@@ -1,3 +1,9 @@
-<h1>Tela de status</h1>
-
-<p id="progress-text" class="text-center mt-2">Aguardando processamento...</p>
+<div class="flex flex-col">
+    <%= turbo_stream_from "progress_channel" %>
+    <h1>Tela de status</h1>
+    
+    
+    <div id="progress_channel_container">
+        <%= render partial: "shared/progress_channel", locals: { processed: 0, remaining: 0, successful_registrations: 0, errors: 0 } %> <!-- Exibe os dados iniciais -->
+    </div>
+</div>
