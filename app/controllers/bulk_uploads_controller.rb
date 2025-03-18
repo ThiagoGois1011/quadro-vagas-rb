@@ -21,6 +21,7 @@ class BulkUploadsController < ApplicationController
     
     File.open(file_path, "wb") { |file| file.write(uploaded_file.read) }
     ProcessTxtJob.perform_later(file_path.to_s, Current.user.id)
+    puts 'algo aqui'
     redirect_to bulk_status_path, notice: t('.success')
   end
 

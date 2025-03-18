@@ -12,4 +12,5 @@ class ProcessTxtJob < ApplicationJob
     lines.each { |line| ProcessLineJob.perform_later(line, user_id) } 
     
     File.delete(file_path) if File.exist?(file_path)
+  end
 end

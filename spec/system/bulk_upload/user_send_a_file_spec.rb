@@ -1,6 +1,20 @@
 require 'rails_helper'
 
 describe 'user send a file', type: :system do
+
+  it 'and see the status', js:true do
+    user = create(:user, role: :admin)
+
+    login_as(user)
+    visit root_path
+    click_on 'Gerar Dados'
+    attach_file 'Enviar Arquivo', Rails.root.join('spec/fixtures/script.txt')
+    click_on 'Enviar'
+
+    expect(current_path).to eq(bulk_status_path)
+    expect(page).to have_content('alguam coisa ')
+  end
+
   it 'with success' do
     user = create(:user, role: :admin)
 
