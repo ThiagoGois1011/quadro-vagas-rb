@@ -9,7 +9,7 @@ class ProcessTxtJob < ApplicationJob
     redis.set("job-data-user-#{user_id}-successful-registrations", "0")
     redis.set("job-data-user-#{user_id}-lines-error", "0")
     redis.set("job-data-user-#{user_id}-lines-error-list", [].to_json)
-
+    sleep 2
     lines.each_with_index { |line, index| ProcessLineJob.perform_later(line, user_id, index) }
     File.delete(file_path) if File.exist?(file_path)
   end
