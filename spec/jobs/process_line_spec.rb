@@ -3,15 +3,17 @@ require 'rails_helper'
 RSpec.describe ProcessTxtJob, type: :job do
   it 'Open job' do
     file_path = Rails.root.join('spec/fixtures/script.txt')
-    ProcessLineJob.perform_later('line', 1)
+    ProcessLineJob.perform_later('line', 1, 1)
 
     expect(enqueued_jobs.size).to eq(1)
   end
 
   it 'Creating a user' do
     user = create(:user)
+    redis = Redis.new(url: ENV["REDIS_URL"])
+    redis.set("job-data-user-#{user.id}-lines-error-list", [].to_json)
 
-    ProcessLineJob.perform_later("U,usuario2@example.com,Nome do usuario,sobrenome,password123", user.id)
+    ProcessLineJob.perform_later("U,usuario2@example.com,Nome do usuario,sobrenome,password123", user.id, 1)
     perform_enqueued_jobs
 
     expect(User.count).to eq(2)
@@ -23,8 +25,10 @@ RSpec.describe ProcessTxtJob, type: :job do
   it 'Creating a company profile' do
     user = create(:user)
     user_for_job = create(:user, email_address: 'thiago@email.com')
+    redis = Redis.new(url: ENV["REDIS_URL"])
+    redis.set("job-data-user-#{user.id}-lines-error-list", [].to_json)
 
-    ProcessLineJob.perform_later("E,Empresa A,https://www.empresa-a.com,contato@empresa-a.com,#{user_for_job.id}", user.id)
+    ProcessLineJob.perform_later("E,Empresa A,https://www.empresa-a.com,contato@empresa-a.com,#{user_for_job.id}", user.id, 1)
     perform_enqueued_jobs
 
     expect(CompanyProfile.count).to eq(1)
@@ -38,9 +42,11 @@ RSpec.describe ProcessTxtJob, type: :job do
     company = create(:company_profile, user: user)
     job_type = create(:job_type)
     experience_level = create(:experience_level)
+    redis = Redis.new(url: ENV["REDIS_URL"])
+    redis.set("job-data-user-#{user.id}-lines-error-list", [].to_json)
 
     ProcessLineJob.perform_later("V,Desenvolvedor Ruby on Rails,5000,BRL,Mensal,Presencial,
-                                 #{job_type.id},São Paulo,#{experience_level.id},#{company.id},descrição da vaga", user.id)
+                                 #{job_type.id},São Paulo,#{experience_level.id},#{company.id},descrição da vaga", user.id, 1)
     perform_enqueued_jobs
 
     expect(JobPosting.count).to eq(1)

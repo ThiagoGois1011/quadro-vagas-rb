@@ -1,4 +1,14 @@
-<p class="text-center mt-2">Linhas Processados: <%= processed %></p>
-<p class="text-center mt-2">Linhas Restantes: <%= remaining %></p>
-<p class="text-center mt-2">Registrados com Sucesso: <%= successful_registrations %></p>
-<p class="text-center mt-2">Linhas com Erro: <%= errors %></p>
+<p class="text-center mt-2" id="processed">Linhas Processados: <%= processed %></p>
+<div class="mt-2">
+    <p class="text-center mt-2 inline" >Linhas Restantes: <p class="inline" id="remaining"><%= remaining %></p></p>
+</div>
+<p class="text-center mt-2" id="successful_registrations">Registrados com Sucesso: <%= successful_registrations %></p>
+<p class="text-center mt-2" id="errors">Linhas com Erro: <%= errors %></p>
+
+<div class="my-8 hidden" id="error-list">
+    <h2 class="text-3xl font-bold mb-8">Script Finalizado</h2>
+    <h3 class="text-2xl font-bold mb-8">Lista de Erros</h3>
+    <% errors_list.each do |e| %>
+        <p class="my-5"><%= e %></p>
+    <% end%>
+</div>
