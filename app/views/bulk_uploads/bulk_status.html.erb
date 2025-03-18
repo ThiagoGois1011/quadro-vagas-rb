@@ -4,6 +4,7 @@
     
     
     <div id="progress_channel_container">
-        <%= render partial: "shared/progress_channel", locals: { processed: 0, remaining: 0, successful_registrations: 0, errors: 0 } %> <!-- Exibe os dados iniciais -->
+        <%= render partial: "shared/progress_channel", locals: { processed: @processed, remaining: @remaining, 
+        successful_registrations: @successful_registrations, errors: @errors } %>
     </div>
 </div>

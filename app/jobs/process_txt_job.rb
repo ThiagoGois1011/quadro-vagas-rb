@@ -9,10 +9,7 @@ class ProcessTxtJob < ApplicationJob
     redis.set("job-data-user-#{user_id}-successful-registrations", "0")
     redis.set("job-data-user-#{user_id}-lines-error", "0")
     puts 'dentro do job txt'
-    sleep 5 
-    lines.each do |line|
-      puts 'dentro do each job txt'
-      ProcessLineJob.perform_later(line, user_id)
-    end
-  end
+    lines.each { |line| ProcessLineJob.perform_later(line, user_id) } 
+    
+    File.delete(file_path) if File.exist?(file_path)
 end

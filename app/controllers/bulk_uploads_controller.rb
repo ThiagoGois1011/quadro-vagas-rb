@@ -25,6 +25,12 @@ class BulkUploadsController < ApplicationController
   end
 
   def bulk_status
+    redis = Redis.new(url: ENV["REDIS_URL"])
+    user_id = Current.user.id
+    @processed = redis.get("job-data-user-#{user_id}-processed-lines").to_i
+    @remaining = redis.get("job-data-user-#{user_id}-remaining-lines").to_i
+    @successful_registrations = redis.get("job-data-user-#{user_id}-successful-registrations").to_i
+    @errors = redis.get("job-data-user-#{user_id}-lines-error").to_i
   end
 
   private 
