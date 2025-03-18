@@ -21,7 +21,7 @@ RSpec.describe ProcessTxtJob, type: :job do
       file.puts "V,Desenvolvedor Ruby on Rails,5000,BRL,Mensal,Presencial,#{job_type.id},São Paulo,#{experience_level.id},#{company.id},descrição da vaga"
     end
 
-    ProcessTxtJob.perform_later(file_path.to_s)
+    ProcessTxtJob.perform_later(file_path.to_s, user.id)
     perform_enqueued_jobs
     perform_enqueued_jobs
     File.delete(file_path) if File.exist?(file_path)

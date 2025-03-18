@@ -10,14 +10,9 @@ describe 'Registered user tries to access the page to create a company profile',
 
   it 'and succeeds', js: true do
     user = create(:user)
-    visit root_path
 
-    click_on 'Entrar'
-    fill_in 'Enter your email address', with: user.email_address
-    fill_in 'Enter your password', with: user.password
-    within '#login_form' do
-      click_on 'Sign in'
-    end
+    login_as(user)
+    visit root_path
     click_on 'Perfil da Empresa'
     fill_in 'Nome', with: 'BlinkedOn'
     fill_in 'URL do Site', with: 'https://blinkedon.tech'
@@ -35,14 +30,9 @@ describe 'Registered user tries to access the page to create a company profile',
 
   it 'and fails when informing invalid data', js: true do
     user = create(:user)
-    visit root_path
 
-    click_on 'Entrar'
-    fill_in 'Enter your email address', with: user.email_address
-    fill_in 'Enter your password', with: user.password
-    within '#login_form' do
-      click_on 'Sign in'
-    end
+    login_as(user)
+    visit root_path
     click_on 'Perfil da Empresa'
     fill_in 'Nome', with: ''
     fill_in 'URL do Site', with: 'https://blinkedon.tech'

@@ -13,13 +13,8 @@ describe 'Registered user tries to access the page to see their company profile'
       user: user
     )
 
+    login_as(user)
     visit root_path
-    click_on 'Entrar'
-    fill_in 'Enter your email address', with: user.email_address
-    fill_in 'Enter your password', with: user.password
-    within '#login_form' do
-      click_on 'Sign in'
-    end
     click_on 'Perfil da Empresa'
 
     expect(current_path).to eq company_profile_path(company_profile)

@@ -25,7 +25,6 @@ Rails.application.routes.draw do
   resources :company_profiles, only: [ :show, :new, :create ]
   resources :job_postings, only: %i[show new create]
   get "search", to: "home#search", as: :search_jobs, param: :query
-  get "bulk_upload", to: "bulk_upload#upload"
-  post "process_data", to: "bulk_upload#process_data"
+  resources :bulk_uploads, only: %i[ new create ]
   get "bulk_status", to: "bulk_upload#bulk_status"
 end

@@ -1,0 +1,11 @@
+pt-BR:
+  bulk_uploads:
+    user_invalid: 'That page does not exist.'
+    new:
+      upload_file: 'Upload File'
+      title: 'Generate Data'
+      send: 'Send'
+    create:
+      success: "File received successfully."
+      error: "A file must be uploaded."
+      type_error: "The file type is not supported."
