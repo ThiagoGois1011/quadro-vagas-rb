@@ -42,6 +42,6 @@ class BulkUploadsController < ApplicationController
   end
 
   def verify_user
-    redirect_to root_path, notice: t(".user_invalid") unless Current.user.admin?
+    redirect_to root_path, notice: t(".user_invalid") unless admin?
   end
 end
