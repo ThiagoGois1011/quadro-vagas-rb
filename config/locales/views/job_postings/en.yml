@@ -16,3 +16,7 @@ en:
       select:
         work_arrangement: "Select work arrangement"
         salary_period: "Select salary period"
+      tag: "Tags"
+    create:
+      failure: "Failed to create a job posting"
+      success: "Job Posting created successfully"
