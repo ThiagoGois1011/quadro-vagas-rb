@@ -27,6 +27,6 @@ pt-BR:
           weekly: Semanal
           monthly: Mensal
           yearly: Anual
-        status:
+        own_status:
           active: 'Ativo'
           archived: 'Arquivado'

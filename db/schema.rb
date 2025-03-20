@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_12_140310) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_14_164123) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -79,11 +79,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_12_140310) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "job_type_id", null: false
-    t.text "description"
-    t.integer "status", default: 0
     t.integer "work_arrangement"
     t.bigint "experience_level_id", null: false
     t.string "job_location"
+    t.integer "own_status", default: 0, null: false
     t.index ["company_profile_id"], name: "index_job_postings_on_company_profile_id"
     t.index ["experience_level_id"], name: "index_job_postings_on_experience_level_id"
     t.index ["job_type_id"], name: "index_job_postings_on_job_type_id"
@@ -112,6 +111,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_12_140310) do
     t.integer "role", default: 0
     t.string "name"
     t.string "last_name"
+    t.integer "status", default: 0, null: false
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 

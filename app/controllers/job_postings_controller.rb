@@ -1,13 +1,13 @@
 class JobPostingsController < ApplicationController
-  allow_unauthenticated_access only: [ :show ]
+  allow_unauthenticated_access only: %i[ show ]
+  before_action :set_job_posting, only: %i[ show ]
+  before_action :check_inactive_job_posting, only: %i[ show ]
 
   def index
     @job_postings = Current.user.job_postings.page(params[:page]).per(10)
   end
 
-  def show
-    @job_posting = JobPosting.find(params[:id])
-  end
+  def show;end
 
   def new
     @job_posting = JobPosting.new
@@ -28,5 +28,13 @@ class JobPostingsController < ApplicationController
 
   def job_posting_params
     params.require(:job_posting).permit(:title, :salary, :salary_currency, :salary_period, :work_arrangement, :job_location, :job_type_id, :experience_level_id, :description)
+  end
+
+  def set_job_posting
+    @job_posting = JobPosting.find(params[:id])
+  end
+
+  def check_inactive_job_posting
+    redirect_to root_path if @job_posting.status == "inactive" && !admin?
   end
 end

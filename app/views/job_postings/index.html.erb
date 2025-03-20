@@ -6,7 +6,7 @@
             <% @job_postings.each do |job| %>
                 <div class="my-2 flex overflow-hidden rounded shadow-md text-slate-500 shadow-slate-200 p-5 mr-4">
                     <%= link_to job.title, job_posting_path(job), class: 'text-xl font-medium text-slate-700 hover:underline' %>
-                    <span class="ml-5 text-white rounded-4xl px-4 <%= job.active? ? 'bg-green-700' : 'bg-red-600' %>"><p><%= JobPosting.translated_status(job.status) %></p></span>
+                    <span class="ml-5 text-white rounded-4xl px-4 <%= job.active? ? 'bg-green-700' : 'bg-red-600' %>"><p><%= JobPosting.translated_status(job.own_status) %></p></span>
                 </div>
             <% end %>
         <% else %>

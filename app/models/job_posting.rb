@@ -20,12 +20,16 @@ class JobPosting < ApplicationRecord
   enum :salary_currency, { usd: 0, eur: 10, brl: 20 }
   enum :salary_period, { daily: 0, weekly: 10, monthly: 20, yearly: 30 }
   enum :work_arrangement, { remote: 0, hybrid: 10, in_person: 20 }
-  enum :status, { active: 0, archived: 2 }, optional: :active
+  enum :own_status, { active: 0, archived: 2 }, optional: :active
+
+  delegate :status, to: :company_profile
+
+  scope :active, -> { includes(company_profile: :user).where(users: { status: "active" }) }
 
   validates :title, :salary, :salary_currency, :salary_period, :company_profile, :work_arrangement, :description, presence: true
   validates :job_location, presence: true, if: -> { in_person? || hybrid? }
 
   def self.translated_status(symbol)
-    I18n.t("activerecord.attributes.job_posting.status.#{symbol}")
+    I18n.t("activerecord.attributes.job_posting.own_status.#{symbol}")
   end
 end

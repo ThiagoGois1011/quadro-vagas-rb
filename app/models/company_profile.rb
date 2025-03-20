@@ -1,8 +1,13 @@
 class CompanyProfile < ApplicationRecord
   belongs_to :user
+  has_many :job_postings, dependent: :destroy
 
   has_one_attached :logo
   has_many :job_postings
+
+  delegate :status, to: :user
+
+  scope :active, -> { includes(:user).where(users: { status: "active" }) }
 
   validates :name, :website_url, :contact_email, :logo, presence: true
   validates :contact_email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
