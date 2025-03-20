@@ -53,4 +53,5 @@ class JobPosting < ApplicationRecord
       errors.add(:base, I18n.t("errors.maximum_tag_error"))
     end
   end
+
 end
